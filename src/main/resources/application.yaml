@@ -1,3 +1,11 @@
 spring:
   application:
-    name: demo
+    name: phago
+  datasource:
+    url: jdbc:postgresql://localhost:5432/phago
+    username: phago
+    password: phago
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
