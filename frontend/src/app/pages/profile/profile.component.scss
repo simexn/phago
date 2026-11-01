@@ -1,0 +1,60 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background: #f5f7f3;
+  color: #17251b;
+}
+main {
+  max-width: 620px;
+  margin: auto;
+  padding: 20px 20px 104px;
+}
+.eyebrow {
+  margin: 0 0 7px;
+  color: #718076;
+  font-size: 11px;
+  letter-spacing: 1.2px;
+}
+h1 {
+  margin: 0;
+  font-size: 31px;
+  letter-spacing: -1px;
+}
+.intro {
+  margin: 8px 0 22px;
+  color: #718076;
+  line-height: 1.4;
+}
+.setting {
+  display: grid;
+  grid-template-columns: 42px 1fr 26px;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: #fff;
+  border-radius: 18px;
+  color: #17251b;
+  text-decoration: none;
+}
+.setting > ion-icon:first-child {
+  display: grid;
+  place-items: center;
+  padding: 10px;
+  border-radius: 12px;
+  background: #e5f2df;
+  color: #2f6537;
+  font-size: 22px;
+}
+.setting b,
+.setting small {
+  display: block;
+}
+.setting small {
+  margin-top: 3px;
+  color: #718076;
+  font-size: 12px;
+}
+.chevron {
+  color: #718076;
+  font-size: 21px;
+}
