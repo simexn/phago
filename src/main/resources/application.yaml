@@ -8,4 +8,13 @@ spring:
   jpa:
     open-in-view: false
     hibernate:
-      ddl-auto: validate
+      ddl-auto: update
+
+jasypt:
+  encryptor:
+    algorithm: PBEWithMD5AndDES
+    iv-generator-classname: org.jasypt.iv.NoIvGenerator
+
+open-food-facts:
+  username: stu24016810
+  password: ENC(xNhI8XGHk4b3urY8SO9Z4Ovtactcoo/aZ4L4gBYe10o=)
