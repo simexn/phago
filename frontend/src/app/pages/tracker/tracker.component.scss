@@ -1,0 +1,290 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background: #f5f7f3;
+  color: #17251b;
+}
+main {
+  max-width: 620px;
+  margin: auto;
+  padding: 14px 20px 104px;
+}
+.hero {
+  position: relative;
+  cursor: pointer;
+  background: #1d3825;
+  color: #fff;
+  padding: 24px;
+  border-radius: 22px;
+}
+.hero .arrow {
+  position: absolute;
+  right: 20px;
+  top: 18px;
+  font-size: 34px;
+  color: #dff2d9;
+}
+.hero h1 {
+  font-size: 40px;
+  margin: 9px 0 18px;
+}
+.hero h1 i {
+  font-size: 17px;
+  color: #c6d8c3;
+  font-style: normal;
+}
+.track {
+  height: 9px;
+  background: #4e6954;
+  border-radius: 9px;
+  overflow: hidden;
+}
+.track i {
+  display: block;
+  height: 100%;
+  background: #a9d870;
+}
+.hero small {
+  color: #c6d8c3;
+}
+.remaining {
+  margin: 9px 0 0;
+  color: #c6d8c3;
+  font-size: 12px;
+}
+.remaining.over-goal {
+  color: #ffd19d;
+}
+.macros {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 9px;
+  margin: 16px 0;
+}
+.macros div,
+.food {
+  background: #fff;
+  border: 0;
+  border-radius: 14px;
+  padding: 15px;
+}
+.macros b,
+.macros small,
+.food b,
+.food small {
+  display: block;
+}
+.macros small,
+.food small,
+section p,
+label {
+  color: #718076;
+  font-size: 12px;
+}
+.daily-details {
+  display: grid;
+  gap: 9px;
+  margin: 0 0 28px;
+}
+.water-card,
+.sugar-card,
+.fiber-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 14px;
+}
+.water-card {
+  padding: 16px;
+}
+.daily-details small,
+.daily-details span {
+  color: #718076;
+  font-size: 11px;
+}
+.daily-details b {
+  margin-top: 3px;
+  font-size: 16px;
+}
+.water-summary {
+  display: grid;
+  grid-template-columns: 102px 1fr;
+  align-items: center;
+  gap: 12px;
+  margin: 6px 0 10px;
+}
+.water-progress {
+  position: relative;
+  display: grid;
+  width: 88px;
+  height: 88px;
+  place-items: center;
+}
+.water-progress svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+.water-progress circle {
+  fill: none;
+  stroke-width: 9;
+}
+.water-ring-bg {
+  stroke: #dce8e1;
+}
+.water-ring {
+  stroke: #62a9d7;
+  stroke-linecap: round;
+  stroke-dasharray: 276.46;
+  transition: stroke-dashoffset 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.water-progress > div {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 68px;
+  height: 68px;
+  place-items: center;
+  border-radius: 50%;
+  background: #fff;
+  text-align: center;
+}
+.water-progress b {
+  color: #4fa9dc;
+  font-size: 22px;
+}
+.water-total {
+  display: block;
+  font-size: 22px;
+}
+.water-total i {
+  color: #718076;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+}
+.water-summary span {
+  margin-top: 4px;
+  color: #718076;
+  font-size: 12px;
+}
+.water-control {
+  position: relative;
+  display: grid;
+  grid-template-columns: 44px 1fr 44px;
+  align-items: center;
+  gap: 10px;
+}
+.water-step {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 13px;
+  background: #e5f2df;
+  color: #2f6537;
+  font-size: 23px;
+}
+.water-step:disabled {
+  opacity: 0.4;
+}
+.water-step.add-water {
+  background: #62a9d7;
+  color: #fff;
+}
+.amount-select {
+  position: relative;
+  text-align: center;
+}
+.amount-select > button {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: #17251b;
+}
+.amount-select b {
+  display: block;
+  font-size: 18px;
+}
+.amount-select span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  margin-top: 1px;
+  color: #718076;
+  font-size: 10px;
+}
+.amount-select ion-icon {
+  font-size: 11px;
+}
+.amount-options {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  bottom: calc(100% + 10px);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  width: 260px;
+  padding: 8px;
+  border: 1px solid #d9e0d7;
+  border-radius: 13px;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(23, 37, 27, 0.12);
+}
+.amount-options button {
+  border: 0;
+  border-radius: 8px;
+  background: #e5f2df;
+  color: #2f6537;
+  padding: 8px 4px;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 800;
+}
+.amount-options form {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 7px;
+}
+.amount-options input {
+  min-width: 0;
+  border: 1px solid #d9e0d7;
+  border-radius: 8px;
+  padding: 8px;
+  font: inherit;
+  font-size: 12px;
+}
+.amount-options form span {
+  font-size: 12px;
+}
+.amount-options form button {
+  background: #5c9f5a;
+  color: #fff;
+  padding: 8px 11px;
+}
+.nutrition-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+}
+.sugar-card,
+.fiber-card {
+  min-height: 84px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.sugar-card b,
+.fiber-card b {
+  font-size: 16px;
+  margin: 4px 0;
+}
+.fiber-card {
+  background: #eef6e9;
+}

@@ -1,0 +1,28 @@
+<main>
+  <p class="eyebrow">ADD TO DIARY</p>
+  <h1>{{ product.name }}</h1>
+  <p class="brand">{{ product.brand || "Open Food Facts" }}</p>
+  <section class="amount">
+    <label>Amount</label>
+    <div><input type="number" [(ngModel)]="grams" min="1" /><span>g</span></div>
+  </section>
+  <section class="meal">
+    <label>Meal</label
+    ><select [(ngModel)]="meal">
+      <option>Breakfast</option>
+      <option>Lunch</option>
+      <option>Dinner</option>
+      <option>Snack</option>
+    </select>
+  </section>
+  <section class="summary">
+    <small>YOUR PORTION</small
+    ><b>{{ (product.calories * grams) / 100 | number: "1.0-0" }} kcal</b
+    ><span
+      >Protein {{ (product.protein * grams) / 100 | number: "1.0-0" }}g · Carbs
+      {{ (product.carbs * grams) / 100 | number: "1.0-0" }}g · Fat
+      {{ (product.fat * grams) / 100 | number: "1.0-0" }}g</span
+    >
+  </section>
+  <button class="add" (click)="add()">Add to diary</button>
+</main>

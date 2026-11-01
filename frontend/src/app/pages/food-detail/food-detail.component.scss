@@ -1,0 +1,91 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background: #f5f7f3;
+  color: #17251b;
+}
+main {
+  max-width: 620px;
+  margin: auto;
+  padding: 20px 20px 104px;
+}
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  color: #718076;
+  margin: 0 0 7px;
+}
+h1 {
+  font-size: 31px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin: 0;
+}
+.brand {
+  color: #718076;
+  margin: 7px 0 27px;
+}
+section {
+  background: #fff;
+  border-radius: 17px;
+  padding: 17px;
+  margin: 11px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+label {
+  font-weight: 700;
+}
+.amount div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.amount input,
+.meal select {
+  width: 105px;
+  border: 1px solid #dbe3d9;
+  border-radius: 10px;
+  padding: 10px;
+  font: inherit;
+  background: #fff;
+}
+.summary {
+  display: block;
+  background: #1d3825;
+  color: white;
+  border-radius: 21px;
+  padding: 22px;
+  margin-top: 23px;
+}
+.summary small,
+.summary span,
+.brand {
+  display: block;
+}
+.summary small {
+  color: #a9c9a3;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+.summary b {
+  font-size: 37px;
+  display: block;
+  margin: 8px 0;
+}
+.summary span {
+  color: #c6d8c3;
+  font-size: 14px;
+}
+.add {
+  width: 100%;
+  margin-top: 17px;
+  border: 0;
+  border-radius: 14px;
+  background: #5c9f5a;
+  color: #fff;
+  padding: 16px;
+  font-weight: 800;
+  font-size: 16px;
+}

@@ -1,0 +1,18 @@
+<main>
+  <div class="date-selector">
+    <div class="date-nav">
+      <button (click)="change(-1)" aria-label="Previous day">
+        <ion-icon name="chevron-back-outline" />
+      </button>
+      <span>{{ label }}</span>
+      <button (click)="change(1)" aria-label="Next day">
+        <ion-icon name="chevron-forward-outline" />
+      </button>
+    </div>
+  </div>
+  <section *ngFor="let meal of meals">
+    <b>{{ meal.productName }}</b>
+    <span>{{ meal.mealType }} · {{ meal.grams }}g</span>
+    <em>{{ meal.calories | number: "1.0-0" }} kcal</em>
+  </section>
+</main>

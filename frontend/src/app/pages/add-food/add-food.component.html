@@ -1,0 +1,47 @@
+<main>
+  <header class="date-selector">
+    <div class="date-nav">
+      <button (click)="change(-1)" aria-label="Previous day">
+        <ion-icon name="chevron-back-outline" />
+      </button>
+      <span>{{ dateLabel }}</span>
+      <button (click)="change(1)" aria-label="Next day">
+        <ion-icon name="chevron-forward-outline" />
+      </button>
+    </div>
+  </header>
+  <p class="eyebrow">ADD FOOD</p>
+  <h1>What did you eat?</h1>
+  <p class="date">Adding to this day</p>
+
+  <div class="search">
+    <input
+      [(ngModel)]="query"
+      (keyup.enter)="search()"
+      placeholder="Search foods or brands"
+      autofocus
+    />
+    <button (click)="search()" aria-label="Search">
+      <ion-icon name="search-outline" />
+    </button>
+  </div>
+
+  @if (!products.length) {
+    <p class="hint">Search for a product or brand to add it to your day.</p>
+  }
+
+  <section class="results" *ngIf="products.length">
+    <p class="result-title">RESULTS</p>
+    <button
+      class="food"
+      *ngFor="let product of products"
+      (click)="add(product)"
+    >
+      <span
+        ><b>{{ product.name }}</b
+        ><small>{{ product.brand || "Open Food Facts" }}</small></span
+      >
+      <em>{{ product.calories | number: "1.0-0" }} kcal</em>
+    </button>
+  </section>
+</main>

@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+.date-selector {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 20px;
+}
+.date-nav {
+  width: 164px;
+  display: grid;
+  grid-template-columns: 32px 1fr 32px;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  text-align: center;
+}
+.date-nav button {
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 9px;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 19px;
+}
+.date-nav span {
+  font-weight: 700;
+}

@@ -1,0 +1,134 @@
+<main>
+  <header class="date-selector">
+    <div class="date-nav">
+      <button (click)="change(-1)" aria-label="Previous day">
+        <ion-icon name="chevron-back-outline" /></button
+      ><span>{{ label }}</span
+      ><button (click)="change(1)" aria-label="Next day">
+        <ion-icon name="chevron-forward-outline" />
+      </button>
+    </div>
+  </header>
+  <section class="hero" (click)="showMeals()">
+    <ion-icon class="arrow" name="arrow-forward-outline" /><small
+      >DAILY ENERGY</small
+    >
+    <h1>
+      {{ calories | number: "1.0-0" }} <i>/ {{ target }} kcal</i>
+    </h1>
+    <div class="track"><i [style.width.%]="progress"></i></div>
+    <p class="remaining" [class.over-goal]="caloriesRemaining < 0">
+      {{
+        caloriesRemaining >= 0
+          ? (caloriesRemaining | number: "1.0-0") + " kcal remaining"
+          : (-caloriesRemaining | number: "1.0-0") + " kcal over goal"
+      }}
+    </p>
+  </section>
+  <section class="macros">
+    <div>
+      <b
+        >{{ protein | number: "1.0-0" }} /
+        {{ proteinTarget | number: "1.0-0" }}g</b
+      ><small>Protein</small>
+    </div>
+    <div>
+      <b>{{ carbs | number: "1.0-0" }} / {{ carbsTarget | number: "1.0-0" }}g</b
+      ><small>Carbs</small>
+    </div>
+    <div>
+      <b>{{ fat | number: "1.0-0" }} / {{ fatTarget | number: "1.0-0" }}g</b
+      ><small>Fat</small>
+    </div>
+  </section>
+  <section class="daily-details">
+    <article class="water-card">
+      <small>WATER TODAY</small>
+      <div class="water-summary">
+        <div class="water-progress">
+          <svg viewBox="0 0 112 112" aria-hidden="true">
+            <circle class="water-ring-bg" cx="56" cy="56" r="44" />
+            <circle
+              class="water-ring"
+              cx="56"
+              cy="56"
+              r="44"
+              [style.stroke-dashoffset]="
+                276.46 - (276.46 * waterProgress) / 100
+              "
+            />
+          </svg>
+          <div>
+            <b>{{ waterProgress }}%</b>
+          </div>
+        </div>
+        <div>
+          <b class="water-total"
+            >{{ water / 1000 | number: "1.2-2" }}
+            <i>/ {{ waterTarget / 1000 | number: "1.2-2" }} L</i></b
+          ><span>{{
+            waterTarget - water > 0
+              ? (waterTarget - water | number: "1.0-0") + " ml remaining"
+              : "Daily goal reached"
+          }}</span>
+        </div>
+      </div>
+      <div class="water-control">
+        <button
+          class="water-step"
+          (click)="addWater(-waterStep)"
+          [disabled]="water <= 0"
+          aria-label="Remove water"
+        >
+          <ion-icon name="remove-outline" />
+        </button>
+        <div class="amount-select">
+          <button (click)="showWaterOptions = !showWaterOptions">
+            <b>{{ waterStep }} ml</b
+            ><span>Tap to change <ion-icon name="chevron-down-outline" /></span>
+          </button>
+          @if (showWaterOptions) {
+            <div class="amount-options">
+              <button (click)="setWaterStep(150)">150 ml</button
+              ><button (click)="setWaterStep(250)">250 ml</button
+              ><button (click)="setWaterStep(500)">500 ml</button>
+              <form (ngSubmit)="setWaterStep(customWater)">
+                <input
+                  type="number"
+                  min="1"
+                  step="50"
+                  [(ngModel)]="customWater"
+                  name="customWater"
+                  aria-label="Custom water amount"
+                /><span>ml</span><button type="submit">Use</button>
+              </form>
+            </div>
+          }
+        </div>
+        <button
+          class="water-step add-water"
+          (click)="addWater(waterStep)"
+          aria-label="Add water"
+        >
+          <ion-icon name="add-outline" />
+        </button>
+      </div>
+    </article>
+    <div class="nutrition-cards">
+      <article class="sugar-card">
+        <small>SUGAR</small
+        ><b
+          >{{ sugar | number: "1.0-0" }} /
+          {{ sugarTarget | number: "1.0-0" }}g</b
+        ><span>Daily limit</span>
+      </article>
+      <article class="fiber-card">
+        <small>FIBER</small
+        ><b
+          >{{ fiber | number: "1.0-0" }} /
+          {{ fiberTarget | number: "1.0-0" }}g</b
+        ><span>From available food data</span>
+      </article>
+    </div>
+  </section>
+</main>
