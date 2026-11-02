@@ -1,0 +1,65 @@
+<main>
+  <div class="heading">
+    <span class="ai-icon"><ion-icon name="sparkles-outline" /></span>
+    <div>
+      <p class="eyebrow">PHAGO AI</p>
+      <h1>Food advice</h1>
+    </div>
+  </div>
+  <p class="context">Using your nutrition data for {{ dateLabel }}.</p>
+
+  <section class="messages" aria-live="polite">
+    @for (chatMessage of messages; track $index) {
+      <article class="message" [class.user]="chatMessage.role === 'user'">
+        {{ chatMessage.text }}
+      </article>
+    }
+    @if (isLoading) {
+      <article class="message loading">
+        Thinking<span></span><span></span><span></span>
+      </article>
+    }
+  </section>
+
+  @if (messages.length === 1 && !isLoading) {
+    <section class="suggestions" aria-label="Suggested questions">
+      <p>You can ask:</p>
+      <button
+        (click)="askSuggestion('How many calories do I have left today?')"
+      >
+        How many calories are left?
+      </button>
+      <button (click)="askSuggestion('Give me a meal idea with more protein.')">
+        Meal idea with more protein
+      </button>
+      <button (click)="askSuggestion('What am I missing today?')">
+        What am I missing today?
+      </button>
+    </section>
+  }
+
+  @if (error) {
+    <p class="error">{{ error }}</p>
+  }
+
+  <div class="chat-composer">
+    <form class="composer" (ngSubmit)="send()">
+      <input
+        [(ngModel)]="message"
+        name="message"
+        placeholder="Ask about food or your goals"
+        autocomplete="off"
+      />
+      <button
+        type="submit"
+        [disabled]="isLoading || !message.trim()"
+        aria-label="Send message"
+      >
+        <ion-icon name="send-outline" />
+      </button>
+    </form>
+    <p class="disclaimer">
+      AI advice is informational and not medical guidance.
+    </p>
+  </div>
+</main>
