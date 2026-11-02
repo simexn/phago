@@ -15,6 +15,9 @@ jasypt:
     algorithm: PBEWithMD5AndDES
     iv-generator-classname: org.jasypt.iv.NoIvGenerator
 
+openrouter:
+  api-key: ENC(YOEkCO4M9qGwbCXOUOEEpQuRJC31UxiW5DKW3y1H7UL5a1FQLWlqKucIBBLkTUH4IUhhCG6W6n3UihfltJM0+EhbNo/0YiN8DYwSdDgVVxZF81t16aAskA==)
+
 open-food-facts:
   username: stu24016810
   password: ENC(xNhI8XGHk4b3urY8SO9Z4Ovtactcoo/aZ4L4gBYe10o=)
