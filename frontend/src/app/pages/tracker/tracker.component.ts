@@ -8,10 +8,12 @@ import { addIcons } from 'ionicons';
 import {
   addOutline,
   arrowForwardOutline,
+  chatbubbleEllipsesOutline,
   chevronBackOutline,
   chevronDownOutline,
   chevronForwardOutline,
   removeOutline,
+  sparklesOutline,
   waterOutline,
 } from 'ionicons/icons';
 import { SelectedDateService } from '../../shared/services/selected-date.service';
@@ -51,10 +53,12 @@ export class TrackerComponent {
     addIcons({
       addOutline,
       arrowForwardOutline,
+      chatbubbleEllipsesOutline,
       chevronBackOutline,
       chevronDownOutline,
       chevronForwardOutline,
       removeOutline,
+      sparklesOutline,
       waterOutline,
     });
     this.date = selectedDate.value;
@@ -102,6 +106,10 @@ export class TrackerComponent {
 
   showMeals() {
     this.router.navigate(['/meals']);
+  }
+
+  showAiAdvice() {
+    this.router.navigate(['/ai-chat']);
   }
 
   addWater(milliliters: number) {

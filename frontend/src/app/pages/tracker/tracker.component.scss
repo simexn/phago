@@ -1,6 +1,6 @@
 :host {
   display: block;
-  min-height: 100vh;
+  min-height: calc(100dvh - 68px);
   background: #f5f7f3;
   color: #17251b;
 }
@@ -287,4 +287,159 @@ label {
 }
 .fiber-card {
   background: #eef6e9;
+}
+.ai-prompt {
+  display: grid;
+  grid-template-columns: 38px 1fr 24px;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #d9e8d5;
+  border-radius: 14px;
+  background: #f0f8ed;
+  padding: 11px 13px;
+  color: #17251b;
+  text-align: left;
+}
+.ai-prompt-icon {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border-radius: 11px;
+  background: #dff0d9;
+  color: #2f6537;
+  font-size: 20px;
+}
+.ai-prompt b,
+.ai-prompt small {
+  display: block;
+}
+.ai-prompt b {
+  font-size: 13px;
+}
+.ai-prompt small {
+  margin-top: 2px;
+  color: #718076;
+  font-size: 11px;
+}
+.ai-prompt-arrow {
+  justify-self: end;
+  color: #2f6537;
+  font-size: 20px;
+}
+
+@media (max-width: 430px) {
+  main {
+    padding-top: 12px;
+    padding-bottom: 96px;
+  }
+
+  .date-selector {
+    margin-bottom: 16px;
+  }
+
+  .hero {
+    padding: 22px;
+  }
+
+  .hero h1 {
+    margin: 8px 0 16px;
+    font-size: 38px;
+  }
+
+  .macros {
+    margin: 14px 0;
+  }
+
+  .macros div {
+    padding: 14px;
+  }
+
+  .daily-details {
+    gap: 9px;
+    margin-bottom: 16px;
+  }
+
+  .water-card {
+    padding: 14px;
+  }
+
+  .water-summary {
+    grid-template-columns: 94px 1fr;
+    gap: 10px;
+    margin: 6px 0 9px;
+  }
+
+  .water-progress {
+    width: 82px;
+    height: 82px;
+  }
+
+  .water-progress > div {
+    width: 64px;
+    height: 64px;
+  }
+
+  .water-progress b {
+    font-size: 20px;
+  }
+
+  .water-total {
+    font-size: 21px;
+  }
+
+  .water-summary span {
+    font-size: 11px;
+  }
+
+  .water-control {
+    grid-template-columns: 44px 1fr 44px;
+    gap: 10px;
+  }
+
+  .water-step {
+    width: 44px;
+    height: 44px;
+    border-radius: 13px;
+    font-size: 23px;
+  }
+
+  .amount-select b {
+    font-size: 17px;
+  }
+
+  .nutrition-cards {
+    gap: 8px;
+  }
+
+  .sugar-card,
+  .fiber-card {
+    min-height: 80px;
+    padding: 14px;
+  }
+
+  .ai-prompt {
+    grid-template-columns: 36px 1fr 22px;
+    gap: 9px;
+    padding: 11px 13px;
+  }
+
+  .ai-prompt-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    font-size: 19px;
+  }
+
+  .ai-prompt b {
+    font-size: 13px;
+  }
+
+  .ai-prompt small {
+    font-size: 11px;
+  }
+
+  .ai-prompt-arrow {
+    font-size: 18px;
+  }
 }

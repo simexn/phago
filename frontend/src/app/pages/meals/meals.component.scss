@@ -3,7 +3,7 @@ main {
   margin: auto;
   padding: 14px 25px 104px;
   background: #f5f7f3;
-  min-height: 100vh;
+  min-height: calc(100dvh - 68px);
 }
 section {
   background: white;

@@ -33,10 +33,12 @@ export class AppComponent {
   }
 
   get isProfileSection() {
-    return this.router.url === '/profile' || this.router.url === '/goals';
+    return ['/profile', '/goals', '/ai-chat'].includes(this.router.url);
   }
 
   back() {
-    this.router.navigate([this.router.url === '/goals' ? '/profile' : '/']);
+    this.router.navigate([
+      ['/goals', '/ai-chat'].includes(this.router.url) ? '/profile' : '/',
+    ]);
   }
 }

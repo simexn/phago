@@ -5,6 +5,7 @@ import { MealsComponent } from './pages/meals/meals.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { GoalsComponent } from './pages/goals/goals.component';
 import { AddFoodComponent } from './pages/add-food/add-food.component';
+import { AiChatComponent } from './pages/ai-chat/ai-chat.component';
 
 export const routes: Routes = [
   { path: '', component: TrackerComponent },
@@ -13,4 +14,5 @@ export const routes: Routes = [
   { path: 'meals', component: MealsComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'goals', component: GoalsComponent },
+  { path: 'ai-chat', component: AiChatComponent },
 ];
